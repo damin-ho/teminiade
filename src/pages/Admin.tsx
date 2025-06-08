@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import ProductGrid from '@/components/ProductGrid';
 import AdminModal from '@/components/AdminModal';
 import { Product } from '@/types/Product';
+import { createProduct, updateProduct, deleteProduct } from '@/lib/supabaseFunctions'
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -12,37 +13,37 @@ const Admin = () => {
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
 
-  // Load products from localStorage on component mount
-  useEffect(() => {
-    const savedProducts = localStorage.getItem('fashionProducts');
-    if (savedProducts) {
-      setProducts(JSON.parse(savedProducts));
-    }
-  }, []);
+  // // Load products from localStorage on component mount
+  // useEffect(() => {
+  //   const savedProducts = localStorage.getItem('fashionProducts');
+  //   if (savedProducts) {
+  //     setProducts(JSON.parse(savedProducts));
+  //   }
+  // }, []);
 
-  // Save products to localStorage whenever products change
-  useEffect(() => {
-    localStorage.setItem('fashionProducts', JSON.stringify(products));
-  }, [products]);
+  // // Save products to localStorage whenever products change
+  // useEffect(() => {
+  //   localStorage.setItem('fashionProducts', JSON.stringify(products));
+  // }, [products]);
 
-  const handleAddProduct = (product: Omit<Product, 'id'>) => {
-    const newProduct: Product = {
-      ...product,
-      id: Date.now().toString()
-    };
-    setProducts(prev => [...prev, newProduct]);
-    setIsAdminModalOpen(false);
-  };
+  // const handleAddProduct = (product: Omit<Product, 'id'>) => {
+  //   const newProduct: Product = {
+  //     ...product,
+  //     id: Date.now().toString()
+  //   };
+  //   setProducts(prev => [...prev, newProduct]);
+  //   setIsAdminModalOpen(false);
+  // };
 
-  const handleEditProduct = (product: Product) => {
-    setProducts(prev => prev.map(p => p.id === product.id ? product : p));
-    setEditingProduct(null);
-    setIsAdminModalOpen(false);
-  };
+  // const handleEditProduct = (product: Product) => {
+  //   setProducts(prev => prev.map(p => p.id === product.id ? product : p));
+  //   setEditingProduct(null);
+  //   setIsAdminModalOpen(false);
+  // };
 
-  const handleDeleteProduct = (productId: string) => {
-    setProducts(prev => prev.filter(p => p.id !== productId));
-  };
+  // const handleDeleteProduct = (productId: string) => {
+  //   setProducts(prev => prev.filter(p => p.id !== productId));
+  // };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
@@ -104,7 +105,7 @@ const Admin = () => {
               setEditingProduct(product);
               setIsAdminModalOpen(true);
             }}
-            onDeleteProduct={handleDeleteProduct}
+            onDeleteProduct={deleteProduct}
           />
         </div>
       </section>
@@ -112,12 +113,11 @@ const Admin = () => {
       {/* Admin Modal */}
       {isAdminModalOpen && (
         <AdminModal
-          product={editingProduct}
           onClose={() => {
             setIsAdminModalOpen(false);
             setEditingProduct(null);
           }}
-          onSave={editingProduct ? handleEditProduct : handleAddProduct}
+          onSave={editingProduct ? updateProduct : createProduct}
         />
       )}
     </div>

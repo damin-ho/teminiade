@@ -122,7 +122,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
           </div>
 
           {/* Content Section */}
-          <div className="lg:w-1/2 px-8 flex flex-col">
+          <div className="lg:w-1/2 px-8 flex flex-col border-4 border-blue-800">
           
 
             {/* Product Details */}

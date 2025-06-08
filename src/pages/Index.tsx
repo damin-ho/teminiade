@@ -16,72 +16,72 @@ const Index = () => {
       setProducts(JSON.parse(savedProducts));
     } else {
       // Add sample products with multiple images for demonstration
-      const sampleProducts: Product[] = [
-        {
-          id: '1',
-          name: 'Elegant Evening Dress',
-          price: 299,
-          description: 'A stunning black evening dress perfect for special occasions. Made with premium silk fabric and featuring elegant draping. This timeless piece combines sophistication with comfort, making it ideal for formal events, dinner parties, or any special celebration where you want to make a lasting impression.',
-          images: [
-            'https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1566479179817-0e2f24d2a2b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-          ],
-          available: true
-        },
-        {
-          id: '2',
-          name: 'Summer Floral Midi',
-          price: 189,
-          description: 'Light and airy floral midi dress perfect for summer days. Features a flattering A-line silhouette and comfortable cotton blend. The beautiful floral print adds a touch of femininity while the midi length makes it versatile for both casual outings and semi-formal occasions.',
-          images: [
-            'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1583396095519-b6c1a3b8b784?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1585487002537-16ab6f34e9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-          ],
-          available: true
-        },
-        {
-          id: '3',
-          name: 'Classic Little Black Dress',
-          price: 245,
-          description: 'Timeless little black dress that works for any occasion. Sleek design with modern cut and premium materials. This versatile piece can be dressed up with heels and jewelry for evening events or paired with a blazer for professional settings. A must-have staple for every wardrobe.',
-          images: [
-            'https://images.unsplash.com/photo-1566479179817-0e2f24d2a2b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-          ],
-          available: true
-        },
-        {
-          id: '4',
-          name: 'Bohemian Maxi Dress',
-          price: 325,
-          description: 'Free-spirited bohemian maxi dress with intricate patterns and flowing silhouette. Perfect for beach vacations, music festivals, or casual summer gatherings. The lightweight fabric moves beautifully with every step, while the unique print makes a bold fashion statement.',
-          images: [
-            'https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1585487002537-16ab6f34e9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-          ],
-          available: true
-        },
-        {
-          id: '5',
-          name: 'Sophisticated Wrap Dress',
-          price: 275,
-          description: 'Elegant wrap dress that flatters all body types with its adjustable tie waist and flowing sleeves. Made from luxurious crepe fabric that drapes beautifully. Perfect for office wear, dinner dates, or any occasion where you want to look polished and put-together.',
-          images: [
-            'https://images.unsplash.com/photo-1583396095519-b6c1a3b8b784?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-          ],
-          available: true
-        }
-      ];
-      setProducts(sampleProducts);
-      localStorage.setItem('fashionProducts', JSON.stringify(sampleProducts));
+      // const sampleProducts: Product[] = [
+      //   {
+      //     id: '1',
+      //     name: 'Elegant Evening Dress',
+      //     price: 299,
+      //     description: 'A stunning black evening dress perfect for special occasions. Made with premium silk fabric and featuring elegant draping. This timeless piece combines sophistication with comfort, making it ideal for formal events, dinner parties, or any special celebration where you want to make a lasting impression.',
+      //     images: [
+      //       'https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1566479179817-0e2f24d2a2b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      //     ],
+      //     available: true
+      //   },
+      //   {
+      //     id: '2',
+      //     name: 'Summer Floral Midi',
+      //     price: 189,
+      //     description: 'Light and airy floral midi dress perfect for summer days. Features a flattering A-line silhouette and comfortable cotton blend. The beautiful floral print adds a touch of femininity while the midi length makes it versatile for both casual outings and semi-formal occasions.',
+      //     images: [
+      //       'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1583396095519-b6c1a3b8b784?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1585487002537-16ab6f34e9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      //     ],
+      //     available: true
+      //   },
+      //   {
+      //     id: '3',
+      //     name: 'Classic Little Black Dress',
+      //     price: 245,
+      //     description: 'Timeless little black dress that works for any occasion. Sleek design with modern cut and premium materials. This versatile piece can be dressed up with heels and jewelry for evening events or paired with a blazer for professional settings. A must-have staple for every wardrobe.',
+      //     images: [
+      //       'https://images.unsplash.com/photo-1566479179817-0e2f24d2a2b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      //     ],
+      //     available: true
+      //   },
+      //   {
+      //     id: '4',
+      //     name: 'Bohemian Maxi Dress',
+      //     price: 325,
+      //     description: 'Free-spirited bohemian maxi dress with intricate patterns and flowing silhouette. Perfect for beach vacations, music festivals, or casual summer gatherings. The lightweight fabric moves beautifully with every step, while the unique print makes a bold fashion statement.',
+      //     images: [
+      //       'https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1585487002537-16ab6f34e9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      //     ],
+      //     available: true
+      //   },
+      //   {
+      //     id: '5',
+      //     name: 'Sophisticated Wrap Dress',
+      //     price: 275,
+      //     description: 'Elegant wrap dress that flatters all body types with its adjustable tie waist and flowing sleeves. Made from luxurious crepe fabric that drapes beautifully. Perfect for office wear, dinner dates, or any occasion where you want to look polished and put-together.',
+      //     images: [
+      //       'https://images.unsplash.com/photo-1583396095519-b6c1a3b8b784?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      //       'https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      //     ],
+      //     available: true
+      //   }
+      // ];
+      // setProducts(sampleProducts);
+      // localStorage.setItem('fashionProducts', JSON.stringify(sampleProducts));
     }
   }, []);
 
